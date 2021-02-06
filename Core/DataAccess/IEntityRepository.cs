@@ -1,11 +1,12 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
-{   //where T: class diyince bu referans tip olması gerekiyor demek istedik yani int, book falan olmaz demek istedik. 
+namespace Core.DataAccess
+{   
+    //where T: class diyince bu referans tip olması gerekiyor demek istedik yani int, bool falan olmaz demek istedik. 
     //Sonrasında da IEntity yada ona implente olan bir referans tip olması gerekir demek istedik ama IEntity'nin kendisini istemiyoruz aslında
     // new () : new'lenebilir bir nesne olmalı. IEntity newlenemyeceği için o kullanılamayacak
     public interface IEntityRepository<T> where T:class,IEntity,new()
