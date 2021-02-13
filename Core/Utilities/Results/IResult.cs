@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Utilities.Results
 {
-    //TBU interface Temel voidler için başlangıç
+    //Bu interface Temel voidler için başlangıç
     public interface IResult
     {
         bool Success { get; }
