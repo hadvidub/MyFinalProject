@@ -12,6 +12,8 @@ namespace Core.Aspects.Autofac.Validation
     public class ValidationAspect : MethodInterception
     {
         private Type _validatorType;
+
+        //defensive codding deniyor buna(alttaki kod)
         public ValidationAspect(Type validatorType)
         {
             if (!typeof(IValidator).IsAssignableFrom(validatorType))
@@ -30,6 +32,15 @@ namespace Core.Aspects.Autofac.Validation
             {
                 ValidationTool.Validate(validator, entity);
             }
+        }
+
+        protected override void OnException(IInvocation invocation, Exception e)
+        {
+            base.OnException(invocation, e);
+        }
+        protected override void OnAfter(IInvocation invocation)
+        {
+            base.OnAfter(invocation);
         }
     }
 }
